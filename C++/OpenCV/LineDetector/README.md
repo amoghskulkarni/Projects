@@ -12,5 +12,5 @@ Standard Hough Transform:
 
 Probabilistic Hough Transform:
 -----------------------------
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/LineDetector/screenshots/Probabilistic-Hough-Transform?raw=true "Probabilistic Hough Transform")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/LineDetector/screenshots/Probabilistic-Hough-Transform.png?raw=true "Probabilistic Hough Transform")
 
