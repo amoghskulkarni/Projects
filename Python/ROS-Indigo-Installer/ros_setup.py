@@ -153,7 +153,7 @@ class ROS_Indigo_Installer():
         print self.OKGREEN + self.BOLD + "INSTALLER::Preparing to fetch core packages" + self.ENDC
         
         # Invoking rosinstall generator
-        with open(os.path.join(self.HOME, "indigo-robot-wet.rosinstall"), 'w') as out:
+        with open(os.path.join(self.HOME, "indigo-ros_comm-wet.rosinstall"), 'w') as out:
             return_code = subprocess.call(['rosinstall_generator', 
                                            'ros_comm', 
                                            '--rosdistro', 
