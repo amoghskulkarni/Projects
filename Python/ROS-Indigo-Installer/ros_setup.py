@@ -72,21 +72,22 @@ class ROS_Indigo_Installer():
     # Create the ROS Indigo Source Directory
     def create_source_dir(self):
         self.HOME = os.path.join(self.path, "ROS-Indigo")
-        print "INSTALLER::" + self.WARNING + "ROS Source Path will be: " + self.HOME + self.ENDC 
+        print self.WARNING + self.BOLD + "INSTALLER::ROS Installation Path: " + self.HOME + self.ENDC 
         if self.ask("INSTALLER::Proceed with Installation?"):
             if not os.path.exists(self.HOME):
                 os.makedirs(self.HOME)
                 p = subprocess.Popen('sudo chown -R ' + self.sudo_user + ":" + self.sudo_user + " ./ROS-Indigo",  shell=True)
                 p.wait()
-                print "INSTALLER::Created Directory: " + self.HOME
+                print self.OKGREEN + self.BOLD + "INSTALLER::Created Directory: " + self.HOME + self.ENDC
             else:
-                print "INSTALLER::Found Existing Directory: " + self.HOME
+                print self.OKGREEN + self.BOLD + "INSTALLER::Found Existing Directory: " + self.HOME + self.ENDC
         else:
             print "INSTALLER::Installation Aborted!"
             sys.exit(2)
 
     # Setup sources list
     def setup_sources_list(self):
+        print "INSTALLER::Setting Up Sources List"
         os.chdir(self.HOME)
         with open("/etc/apt/sources.list.d/ros-latest.list", 
                   "w") as sources:
@@ -95,6 +96,7 @@ class ROS_Indigo_Installer():
             
     # Setup keys
     def setup_keys(self):
+        print "INSTALLER::Setting up Keys"
         os.chdir(self.HOME)
         p1 = subprocess.Popen(["wget", 
                                "https://raw.githubusercontent.com/ros/rosdistro/master/ros.key",
@@ -114,6 +116,7 @@ class ROS_Indigo_Installer():
 
     # Install Bootstrap Dependencies
     def install_bootstrap_dependencies(self):
+        print self.OKGREEN + self.BOLD + "INSTALLER::Installing Bootstrap Dependencies" + self.ENDC
         os.chdir(self.HOME)
         p = subprocess.Popen(['apt-get', 
                               'install', 
@@ -126,6 +129,7 @@ class ROS_Indigo_Installer():
 
     # Initialize rosdep
     def init_rosdep(self):
+        print self.OKGREEN + self.BOLD + "INSTALLER::Initializing rosdep" + self.ENDC
         try:
             os.remove("/etc/ros/rosdep/sources.list.d/20-default.list")
         except OSError:
@@ -136,14 +140,19 @@ class ROS_Indigo_Installer():
         p.wait()
         pw = pwd.getpwnam(self.sudo_user)
         uid = pw.pw_uid
+        gid = pw.pw_gid
         os.setuid(uid)
+        os.setuid(gid)
         os.system("cd " + self.HOME)
         os.system("rosdep update")
 
     # Install ROS in self.HOME
     def install(self):
         os.chdir(self.HOME)
+
+        print self.OKGREEN + self.BOLD + "INSTALLER::Preparing to fetch core packages" + self.ENDC
         
+        # Invoking rosinstall generator
         with open(os.path.join(self.HOME, "indigo-robot-wet.rosinstall"), 'w') as out:
             return_code = subprocess.call(['rosinstall_generator', 
                                            'robot', 
@@ -153,11 +162,37 @@ class ROS_Indigo_Installer():
                                            '--wet-only', 
                                            '--tar'], stdout=out)
 
+        os.system('sudo chown ' + self.sudo_user + ":" + self.sudo_user + " indigo-robot-wet.rosinstall")
+
+        print self.OKGREEN + self.BOLD + "INSTALLER::Fetching Core Packages" + self.ENDC
+
+        # Invoking wstool on generated .rosinstall file
         p = subprocess.Popen(['wstool', 
                               'init', 
                               '-j8', 
                               'src', 
                               'indigo-robot-wet.rosinstall'])
+        p.wait()
+
+        print self.OKGREEN + self.BOLD + "INSTALLER::Resolving Dependencies" + self.ENDC
+        
+        # Resolving dependencies
+        p = subprocess.Popen(['sudo',
+                              'rosdep', 
+                              'install', 
+                              '--from-paths', 
+                              'src', 
+                              '--ignore-src', 
+                              '--rosdistro', 
+                              '-y'])
+        p.wait()
+
+        print self.OKGREEN + self.BOLD + "INSTALLER::Building catkin workspace" + self.ENDC
+
+        # Build catkin_workspace!
+        p = subprocess.Popen([os.path.join(self.HOME, 'src/catkin/bin/catkin_make_isolated'), 
+                              '--install',
+                              '-DCMAKE_BUILD_TYPE=Release'])
         p.wait()
 
     # Run the installer
