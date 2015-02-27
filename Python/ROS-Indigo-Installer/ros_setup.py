@@ -155,14 +155,14 @@ class ROS_Indigo_Installer():
         # Invoking rosinstall generator
         with open(os.path.join(self.HOME, "indigo-robot-wet.rosinstall"), 'w') as out:
             return_code = subprocess.call(['rosinstall_generator', 
-                                           'robot', 
+                                           'ros_comm', 
                                            '--rosdistro', 
                                            'indigo', 
                                            '--deps', 
                                            '--wet-only', 
                                            '--tar'], stdout=out)
 
-        os.system('sudo chown ' + self.sudo_user + ":" + self.sudo_user + " indigo-robot-wet.rosinstall")
+        os.system('sudo chown ' + self.sudo_user + ":" + self.sudo_user + " indigo-ros_comm-wet.rosinstall")
 
         print self.OKGREEN + self.BOLD + "INSTALLER::Fetching Core Packages" + self.ENDC
 
@@ -171,7 +171,7 @@ class ROS_Indigo_Installer():
                               'init', 
                               '-j8', 
                               'src', 
-                              'indigo-robot-wet.rosinstall'])
+                              'indigo-ros_comm-wet.rosinstall'])
         p.wait()
 
         print self.OKGREEN + self.BOLD + "INSTALLER::Resolving Dependencies" + self.ENDC
