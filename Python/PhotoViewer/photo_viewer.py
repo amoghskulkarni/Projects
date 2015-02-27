@@ -149,7 +149,7 @@ class ViewerFrame(wx.Frame):
     def __init__(self):
         """Constructor"""
         wx.Frame.__init__(self, None, title="Image Viewer")
-        panel = ViewerPanel(self)
+        panel = Panel(self)
         self.folderPath = ""
         Publisher().subscribe(self.resizeFrame, ("resize"))
         
@@ -171,8 +171,7 @@ class ViewerFrame(wx.Frame):
         self.toolbar = self.CreateToolBar()
         self.toolbar.SetToolBitmapSize((16,16))
         
-        open_ico = wx.ArtProvider.GetBitmap(wx.ART_FILE_OPEN, wx.ART_TOOLBAR, (16,16))
-        openTool = self.toolbar.AddSimpleTool(wx.ID_ANY, open_ico, "Open", "Open an Image Directory")
+        openTool = self.toolbar.AddSimpleTool(wx.ID_ANY, "./icons/photo_OPEN.png", "./icons/photo_OPEN.png", "Open an Image Directory")
         self.Bind(wx.EVT_MENU, self.onOpenDirectory, openTool)
         
         self.toolbar.Realize()
