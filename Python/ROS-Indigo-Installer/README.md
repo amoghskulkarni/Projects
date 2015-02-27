@@ -1,7 +1,7 @@
-Ros Indigo Installer
-====================
+Ros Indigo - Install from Source
+================================
 
-This is a useful script that installs ROS Indigo from Source!
+A useful script that installs ROS Indigo from Source!
 
 You can find instructions for manual installation here: 
 http://wiki.ros.org/indigo/Installation/Source
@@ -16,5 +16,30 @@ Usage:
 -----
 
 ![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Usage.png?raw=true "Usage")
+
+Install Bootstrap Dependencies:
+------------------------------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Setup.png?raw=true "Setup")
+
+Initialize Rosdep:
+-----------------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Rosdep.png?raw=true "Setup")
+
+Fetch Core Packages:
+-------------------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Core.png?raw=true "Setup")
+
+Build Catkin Workspace:
+----------------------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Build.png?raw=true "Setup")
+
+Successful Build:
+----------------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Done.png?raw=true "Setup")
 
 
