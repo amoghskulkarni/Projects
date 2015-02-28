@@ -17,10 +17,15 @@ Usage:
 
 ![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Usage.png?raw=true "Usage")
 
+Setup Sources.list & Keys:
+-------------------------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Setup.png?raw=true "Setup")
+
 Install Bootstrap Dependencies:
 ------------------------------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Setup.png?raw=true "Setup")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Bootstrap.png?raw=true "Bootstrap")
 
 Initialize Rosdep:
 -----------------
