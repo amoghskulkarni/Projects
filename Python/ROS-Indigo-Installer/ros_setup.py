@@ -141,6 +141,16 @@ class ROS_Indigo_Installer():
         pw = pwd.getpwnam(self.sudo_user)
         uid = pw.pw_uid
         gid = pw.pw_gid
+        with open(os.path.join(self.HOME, "indigo-ros_comm-wet.rosinstall"), 'w') as out:
+            out.write("") 
+            os.chdir(self.HOME)
+            p = subprocess.call(['chown', 
+                                 self.sudo_user, 
+                                 'indigo-ros_comm-wet.rosinstall'])
+
+            p = subprocess.call(['chgrp', 
+                                 self.sudo_user, 
+                                 'indigo-ros_comm-wet.rosinstall'])
         os.setuid(uid)
         os.setuid(gid)
         os.system("cd " + self.HOME)
@@ -162,9 +172,6 @@ class ROS_Indigo_Installer():
                                            '--wet-only', 
                                            '--tar'], stdout=out)
 
-        # Sudo issue here
-        os.system('sudo chown ' + self.sudo_user + ":" + self.sudo_user + " indigo-ros_comm-wet.rosinstall")
-
         print self.OKGREEN + self.BOLD + "INSTALLER::Fetching Core Packages" + self.ENDC
 
         # Invoking wstool on generated .rosinstall file
@@ -179,14 +186,14 @@ class ROS_Indigo_Installer():
         
         # Resolving dependencies
         # Possible sudo issue here
-        p = subprocess.Popen(['rosdep', 
-                              'install', 
-                              '--from-paths', 
-                              'src', 
-                              '--ignore-src', 
-                              '--rosdistro', 
-                              '-y'])
-        p.wait()
+        p = subprocess.call(['sudo',
+                             'rosdep', 
+                             'install', 
+                             '--from-paths', 
+                             'src', 
+                             '--ignore-src', 
+                             '--rosdistro', 
+                             '-y'])
 
         print self.OKGREEN + self.BOLD + "INSTALLER::Building catkin workspace" + self.ENDC
 
