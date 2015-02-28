@@ -47,4 +47,10 @@ Successful Build:
 
 ![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Done.png?raw=true "Setup")
 
+Roscore:
+-------
+
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ROS-Indigo-Installer/screenshots/Roscore.png?raw=true "Setup")
+
+
 
