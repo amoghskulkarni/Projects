@@ -1,4 +1,4 @@
-#!/usr/bin/python
+1#!/usr/bin/python
 # Author: Pranav Srinivas Kumar
 # Date: 2015.02.27
 
@@ -113,6 +113,7 @@ class ROS_Indigo_Installer():
         os.chdir(self.HOME)
         p = subprocess.Popen(['apt-get', 'update'])
         p.wait()
+        os.system("echo \'" + self.sudo_user + " ALL=(ALL) ALL\'" + " >> /etc/sudoers")
 
     # Install Bootstrap Dependencies
     def install_bootstrap_dependencies(self):
@@ -151,6 +152,8 @@ class ROS_Indigo_Installer():
             p = subprocess.call(['chgrp', 
                                  self.sudo_user, 
                                  'indigo-ros_comm-wet.rosinstall'])
+            p = subprocess.call(['chmod', '-R', '777', self.HOME])
+
         os.setgid(gid)
         os.setuid(uid)
         os.system("cd " + self.HOME)
@@ -173,7 +176,7 @@ class ROS_Indigo_Installer():
                                            '--tar'], stdout=out)
 
         print self.OKGREEN + self.BOLD + "INSTALLER::Fetching Core Packages" + self.ENDC
-
+        os.chdir(self.HOME)
         # Invoking wstool on generated .rosinstall file
         p = subprocess.Popen(['wstool', 
                               'init', 
@@ -185,7 +188,6 @@ class ROS_Indigo_Installer():
         print self.OKGREEN + self.BOLD + "INSTALLER::Resolving Dependencies" + self.ENDC
         
         # Resolving dependencies
-        # Possible sudo issue here
         p = subprocess.call(['rosdep', 
                              'install', 
                              '--from-paths', 
