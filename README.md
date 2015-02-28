@@ -1,3 +1,3 @@
 # Projects
 
-This repository is a collection of programming projects
+This repository is a collection of samples & projects in various programming languages 
