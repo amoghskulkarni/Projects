@@ -151,8 +151,8 @@ class ROS_Indigo_Installer():
             p = subprocess.call(['chgrp', 
                                  self.sudo_user, 
                                  'indigo-ros_comm-wet.rosinstall'])
+        os.setgid(gid)
         os.setuid(uid)
-        os.setuid(gid)
         os.system("cd " + self.HOME)
         os.system("rosdep update")
 
@@ -186,8 +186,7 @@ class ROS_Indigo_Installer():
         
         # Resolving dependencies
         # Possible sudo issue here
-        p = subprocess.call(['sudo',
-                             'rosdep', 
+        p = subprocess.call(['rosdep', 
                              'install', 
                              '--from-paths', 
                              'src', 
