@@ -1,7 +1,7 @@
 Ros Indigo - Install from Source
 ================================
 
-A useful script that installs ROS Indigo from Source!
+A useful script that automates ROS Indigo installation from Source!
 
 You can find instructions for manual installation here: 
 http://wiki.ros.org/indigo/Installation/Source
