@@ -13,28 +13,28 @@ Steps:
 
 Sample Scheduler Log:
 --------------------
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/scheduler_log.png?raw=true "Scheduler Log")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/scheduler_log.png?raw=true "Scheduler Log")
 
 Sample Thread Classifier:
 ------------------------
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/thread_classifier.png?raw=true "Thread Classifier")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/thread_classifier.png?raw=true "Thread Classifier")
 
 Sample Config:
 -------------
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/plot_config.png?raw=true "Plot Configuration")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/plot_config.png?raw=true "Plot Configuration")
 
 Sample Plots:
 ------------
 ####Plot Start Time: 4.294912824s; Plot End Time: 4.294912922s
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/scheduler_plot_0.png?raw=true "Plot 0")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/scheduler_plot_0.png?raw=true "Plot 0")
 
 ####Plot Start Time: 4.294912824s; Plot End Time: 4.294913335s
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/scheduler_plot_1.png?raw=true "Plot 1")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/scheduler_plot_1.png?raw=true "Plot 1")
 
 ####Plot Start Time: 4.294912824s; Plot End Time: 4.294914008s
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/scheduler_plot_2.png?raw=true "Plot 2")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/scheduler_plot_2.png?raw=true "Plot 2")
 
 ####Plot Start Time: 4.294912824s; Plot End Time: 4.294915163s
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/ActivityPlotter/screenshots/scheduler_plot_3.png?raw=true "Plot 3")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/Python/Activity-Plotter/screenshots/scheduler_plot_3.png?raw=true "Plot 3")
 
 
