@@ -162,6 +162,7 @@ class ROS_Indigo_Installer():
                                            '--wet-only', 
                                            '--tar'], stdout=out)
 
+        # Sudo issue here
         os.system('sudo chown ' + self.sudo_user + ":" + self.sudo_user + " indigo-ros_comm-wet.rosinstall")
 
         print self.OKGREEN + self.BOLD + "INSTALLER::Fetching Core Packages" + self.ENDC
@@ -177,8 +178,8 @@ class ROS_Indigo_Installer():
         print self.OKGREEN + self.BOLD + "INSTALLER::Resolving Dependencies" + self.ENDC
         
         # Resolving dependencies
-        p = subprocess.Popen(['sudo',
-                              'rosdep', 
+        # Possible sudo issue here
+        p = subprocess.Popen(['rosdep', 
                               'install', 
                               '--from-paths', 
                               'src', 
@@ -194,6 +195,11 @@ class ROS_Indigo_Installer():
                               '--install',
                               '-DCMAKE_BUILD_TYPE=Release'])
         p.wait()
+
+    # Add line bashrc
+    def addto_bashrc(self):
+        command = "echo \"source " + os.path.join(self.HOME, "install_isolated/setup.bash") + "\""  + " >> ~/.bashrc"
+        os.system(command)
 
     # Run the installer
     def run(self):
@@ -215,6 +221,8 @@ class ROS_Indigo_Installer():
         self.init_rosdep()
         # Install ROS
         self.install()
+        # Add to bashrc
+        self.addto_bashrc()
 
 if __name__ == "__main__":
 
