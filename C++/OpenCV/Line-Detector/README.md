@@ -7,10 +7,10 @@ Real-Time Hough Transform Line Detection:
 
 Standard Hough Transform:
 ------------------------
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/LineDetector/screenshots/Standard-Hough-Transform.png?raw=true "Standard Hough Transform")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Line-Detector/screenshots/Standard-Hough-Transform.png?raw=true "Standard Hough Transform")
 
 
 Probabilistic Hough Transform:
 -----------------------------
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/LineDetector/screenshots/Probabilistic-Hough-Transform.png?raw=true "Probabilistic Hough Transform")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Line-Detector/screenshots/Probabilistic-Hough-Transform.png?raw=true "Probabilistic Hough Transform")
 

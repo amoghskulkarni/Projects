@@ -11,31 +11,31 @@ Real-Time Object Tracking:
 Brown Wallet:
 ------------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/ObjectTracker/screenshots/Brown-Wallet.png?raw=true "Brown Wallet")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Object-Tracker/screenshots/Brown-Wallet.png?raw=true "Brown Wallet")
 
 Cupcake Box:
 -----------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/ObjectTracker/screenshots/Cupcake-Box.png?raw=true "Cupcake Box")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Object-Tracker/screenshots/Cupcake-Box.png?raw=true "Cupcake Box")
 
 Green Listerine PocketMist:
 --------------------------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/ObjectTracker/screenshots/Green-Listerine.png?raw=true "Green Listerine")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Object-Tracker/screenshots/Green-Listerine.png?raw=true "Green Listerine")
 
 Blue Green Bottle Cap:
 ---------------------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/ObjectTracker/screenshots/Blue-Green-BottleCap.png?raw=true "Blue Green Bottle Cap")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Object-Tracker/screenshots/Blue-Green-BottleCap.png?raw=true "Blue Green Bottle Cap")
 
 White Fire Alarm:
 ----------------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/ObjectTracker/screenshots/White-FireAlarm.png?raw=true "White Fire Alarm")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Object-Tracker/screenshots/White-FireAlarm.png?raw=true "White Fire Alarm")
 
 White Sticker:
 -------------
 
-![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/ObjectTracker/screenshots/White-Sticker.png?raw=true "White Sticker")
+![Alt text](https://github.com/pranav-srinivas-kumar/Projects/blob/master/C++/OpenCV/Object-Tracker/screenshots/White-Sticker.png?raw=true "White Sticker")
 
 
