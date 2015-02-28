@@ -1,4 +1,4 @@
-1#!/usr/bin/python
+#!/usr/bin/python
 # Author: Pranav Srinivas Kumar
 # Date: 2015.02.27
 
