@@ -208,7 +208,12 @@ class ROS_Indigo_Installer():
     def addto_bashrc(self):
         command = "echo \"source " + os.path.join(self.HOME, "install_isolated/setup.bash") + "\""  + " >> ~/.bashrc"
         os.system(command)
-        os.system('source ~/.bashrc')
+        os.system("source ~/.bashrc")
+        p  = subprocess.Popen(['source',
+                               '~/.bashrc'])
+        p.wait()
+        print self.OKGREEN + self.BOLD + "INSTALLATION::ROS Indigo - Installation Complete!" + self.ENDC
+        
 
     # Run the installer
     def run(self):
